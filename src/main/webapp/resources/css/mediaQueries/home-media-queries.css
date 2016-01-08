@@ -1,0 +1,153 @@
+
+
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+	#toolbar{
+		margin-left:0%;
+		text-align: left;
+		font-size: 11px;
+		width: 280px;
+	}
+	#toolbar #switch-to-html{
+		float:none;
+	}
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+	#toolbar{
+		margin-left:0%;
+		text-align: left;
+		font-size: 11px;
+		width: 280px;
+	}
+	#toolbar #switch-to-html{
+		float:none;
+	}
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
+	#toolbar{
+		margin-left:0%;
+		text-align: left;
+		font-size: 11px;
+		width: 320px;
+	}
+	#toolbar #switch-to-html{
+		float:none;
+	}
+}
+
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Portrait and Landscape */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+	#toolbar{
+		margin-left:0%;
+		text-align: left;
+		font-size: 11px;
+		width: 280px;
+	}
+	#toolbar #switch-to-html{
+		float:none;
+	}
+}
+
+
+/* ----------- Galaxy S4 ----------- */
+
+/* Portrait and Landscape */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+	#toolbar{
+		margin-left:0%;
+		text-align: left;
+		font-size: 11px;
+		width: 280px;
+	}
+	#toolbar #switch-to-html{
+		float:left;
+	}
+}
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+	#toolbar{
+		margin-left:0%;
+		text-align: left;
+		font-size: 11px;
+		width: 280px;
+	}
+	#toolbar #switch-to-html{
+		float:none;
+	}
+}
+
+/*--Galaxy S2--*/
+/* Portrait and Landscape*/
+@media only screen and (min-device-width : 480px) and (max-device-width : 800px) and (orientation : landscape) {
+	#toolbar{
+		margin-left:0%;
+		text-align: left;
+		font-size: 11px;
+		width: 280px;
+	}
+	#toolbar #switch-to-html{
+		float:none;
+	}
+}
+
+@media only screen and (min-device-width : 480px) and (max-device-width : 800px) and (orientation : portrait) {
+	#toolbar{
+		margin-left:0%;
+		text-align: left;
+		font-size: 11px;
+		width: 280px;
+	}
+	#toolbar #switch-to-html{
+		float:none;
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 5:3) and (max-device-width:1280px) { 
+	#toolbar{
+		margin-left:0%;
+		text-align: left;
+		font-size: 11px;
+		width: 280px;
+	}
+	#toolbar #switch-to-html{
+		float:none;
+	}
+}
+
+/*-------------LUMIA----------------*/
+@media only screen 
+	and (device-width: 320px) 
+	and (device-height: 533px) 
+	and (-webkit-device-pixel-ratio: 1.5) { 
+	
+	#toolbar{
+		margin-left:0%;
+		text-align: left;
+		font-size: 11px;
+		width: 280px;
+	}
+	#toolbar #switch-to-html{
+		float:none;
+	}
+}
+
+
+
+
+

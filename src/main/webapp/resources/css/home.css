@@ -1,0 +1,22 @@
+.container{text-align: center;}
+#toolbar{margin-left:9%;}
+#editSectionButton{margin-top:5px;}
+.myCarousel{
+    height:20%;
+}
+
+.carousel-caption-text{
+    color:white;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+.carousel-caption{
+    top:33%;
+}
+
+.carousel-caption-paragraph{
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+

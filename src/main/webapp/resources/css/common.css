@@ -1,0 +1,116 @@
+.navbarLogo{width: 128px;margin-top: -10px;}
+.navbar-nav{float:right;margin-right:10%;}
+.container{text-align: center;}
+
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.btn-danger , .btn-success , .btn-warning , .btn-primary{
+	background-image: none;
+	border: none;	
+}
+.btn-primary{
+	background-color: #54D1E3;
+}
+
+.form-signin{
+	background-color: white;
+	border-radius: 6px;	
+}
+
+.navbar-inverse{
+	background-image: none;	
+	border-radius: 0px;
+	background-color:white;
+	border:none;
+ 	 box-shadow: 0px 0px 0px 3px #ccc;
+ 	 text-shadow: none;
+ 	 font-weight: 500;
+ 	 margin-bottom:3px;
+}
+
+
+
+.navbar-inverse .navbar-nav > .active > a{
+	background-image: none;
+	background-color: transparent;
+	box-shadow: none;
+	color:#293C42;
+	background-image: linear-gradient( 180deg, rgba(0,0,0,0), rgba(0,0,0,0) 71%, #222222 73.1%, #222222 75%, rgba(0,0,0,0) 75.1%, rgba(0,0,0,0) );
+}
+
+.navbar-nav a:hover , .navbar-inverse .navbar-nav li a:hover{
+	color: black;
+	background-image: linear-gradient( 180deg, rgba(0,0,0,0), rgba(0,0,0,0) 71%, #222222 73.1%, #222222 75%, rgba(0,0,0,0) 75.1%, rgba(0,0,0,0) );
+}
+
+.navbar-nav a, .navbar-inverse .navbar-nav li a{
+	color: #293C42;
+	font-weight: bold;
+}
+
+
+.navbar-inverse .navbar-nav{float:right;margin-right:10%;}
+.navbar-inverse .navbar-brand{
+	padding:0px;
+	margin-left:0px;
+	padding-left:10px;
+	height: 80px;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar{
+	background-color:black;
+}
+
+.navbar-inverse .navbar-toggle{
+	margin-top:4%;
+}
+
+.navbar-nav > li > a {padding-top:30px !important; padding-bottom:30px !important; padding-left: 10px; padding-right:10px;font-family: 'Open Sans', sans-serif;}
+.navbar {min-height:42px !important}
+
+.h1, h2, h3, h4, h5, h6{ color: #586A76 ;}
+
+.panel{
+	border-color: white;
+	border-top:none;
+}
+
+.panel .panel-heading{
+	background-image: none;
+	background-color: #54D1E3;
+}
+
+.accesaBlueColor{
+	color: #54D1E3;
+}
+
+.panel .panel-heading a{
+	font-weight: bold;
+}
+
+
+.createAddOrBackButton{
+	background-color:#54D2E3;
+}
+
+.editOrSetFundsButton{
+	background-color:#FEC858;
+}
+
+.cancelDeclineOrRemoveButton{
+	background-color:#FF5158;
+}
+
+.sortByLink{
+	float:left;
+}
+
+.toolbarContainer{
+	float:left;
+	text-align:left;
+}

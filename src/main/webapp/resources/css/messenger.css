@@ -1,0 +1,9 @@
+.orders-table tbody {
+    text-align: left;
+}
+.bid{
+    display: none;
+}
+#orderBids th {
+    text-align: center;
+}
