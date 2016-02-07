@@ -1,9 +1,6 @@
 package com.startup.enginizer.context;
 
-import com.startup.enginizer.config.AsyncConfig;
-import com.startup.enginizer.config.HibernateConfig;
-import com.startup.enginizer.config.MVCConfig;
-import com.startup.enginizer.config.MailingConfig;
+import com.startup.enginizer.config.*;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -16,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableWebMvc
 @EnableScheduling
-@Import({MVCConfig.class,HibernateConfig.class, MailingConfig.class, AsyncConfig.class})
+@Import({MVCConfig.class, FreemarkerConfig.class,HibernateConfig.class, MailingConfig.class, AsyncConfig.class})
 @ComponentScan("com.startup.enginizer.*")
 @PropertySource("classpath:conf/application.properties")
 @EnableAsync

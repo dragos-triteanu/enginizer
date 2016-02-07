@@ -8,10 +8,10 @@
 	<version>1.0-SNAPSHOT</version>
 	<properties>
 		<java-version>1.7</java-version>
-		<spring.version>4.2.2.RELEASE</spring.version>
+		<spring.version>4.2.4.RELEASE</spring.version>
 		<servlet.api.version>3.1.0</servlet.api.version>
 		<org.slf4j.version>1.6.1</org.slf4j.version>
-		<freemarker.version>2.3.14</freemarker.version>
+		<freemarker.version>2.3.23</freemarker.version>
 		<log4j.version>1.2.14</log4j.version>
 		<jackson.asl.version>1.9.13</jackson.asl.version>
 		<jackson.databind.version>2.1.1</jackson.databind.version>
@@ -19,20 +19,21 @@
 		<guava.version>17.0</guava.version>
 		<ehcache.version>2.7.4</ehcache.version>
 		<maven.compiler.version>3.0</maven.compiler.version>
-		<spring.security.version>4.0.2.RELEASE</spring.security.version>
+		<spring.security.version>4.0.3.RELEASE</spring.security.version>
+		<spring.boot.version>1.3.2.RELEASE</spring.boot.version>
 	
-		<twitter.bootstrap.version>3.3.5</twitter.bootstrap.version>
-		<jquery.version>1.9.1</jquery.version>
-		<jquery.ui.version>1.11.4</jquery.ui.version>
 		<mysql.connector.version>5.1.36</mysql.connector.version>
 		<apache.commons.version>3.4</apache.commons.version>
 		<commons.fileupload.version>1.2.2</commons.fileupload.version>
 		<commons.io.version>1.3.2</commons.io.version>
-		<flying.saucer.pdf.version>9.0.8</flying.saucer.pdf.version>
         <hibernate.version>5.0.3.Final</hibernate.version>
         <javax.mail.version>1.4.7</javax.mail.version>
 	</properties>
-	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.3.2.RELEASE</version>
+	</parent>
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -106,7 +107,12 @@
 			<version>${servlet.api.version}</version>
 		</dependency>
 
-		
+		<!-- Spring boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
 		<!-- Spring security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -125,31 +131,25 @@
 		</dependency>
 		
 		<!-- Logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${org.slf4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${org.slf4j.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${org.slf4j.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
-			<scope>runtime</scope>
-		</dependency>		
-		
-		
+		<!--<dependency>-->
+			<!--<groupId>org.slf4j</groupId>-->
+			<!--<artifactId>slf4j-api</artifactId>-->
+			<!--<version>${org.slf4j.version}</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.slf4j</groupId>-->
+			<!--<artifactId>slf4j-log4j12</artifactId>-->
+			<!--<version>${org.slf4j.version}</version>-->
+			<!--<scope>runtime</scope>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>log4j</groupId>-->
+			<!--<artifactId>log4j</artifactId>-->
+			<!--<version>${log4j.version}</version>-->
+			<!--<scope>runtime</scope>-->
+		<!--</dependency>-->
+
+
 		 <!-- JSON converter -->
 		 <dependency>
 			<groupId>org.codehaus.jackson</groupId>
@@ -168,7 +168,7 @@
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
 			<version>${freemarker.version}</version>
-		</dependency>
+        </dependency>
 			
 		<!-- Caching -->
 		<dependency>
@@ -214,11 +214,6 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>${commons.io.version}</version>
-		</dependency>
-		 <dependency>
-			<groupId>org.xhtmlrenderer</groupId>
-			<artifactId>flying-saucer-pdf</artifactId>
-			<version>${flying.saucer.pdf.version}</version>
 		</dependency>
         <dependency>
             <groupId>javax.mail</groupId>
@@ -267,6 +262,10 @@
 
                 </executions>
             </plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
         </plugins>
     </build>
 </project>

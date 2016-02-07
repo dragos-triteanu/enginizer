@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan(basePackages={"com.startup.enginizer.*", "com.startup.enginizer.repository"})
 @Import(value={HibernateConfig.class, SecurityConfig.class, WebSocketConfig.class})
 public class ServiceAppContext extends WebMvcConfigurerAdapter  {
-	
+
     @Bean
 	public PropertySourcesPlaceholderConfigurer placeHolderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();
