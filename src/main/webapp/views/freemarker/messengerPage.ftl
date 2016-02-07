@@ -4,7 +4,6 @@
 <#import "*/components/chat-window.ftl" as chatRenderer />
 <head>
 <#include "*/includes.ftl">
-    <link type="text/css" rel="stylesheet" href="./resources/css/order.css"/>
     <link type="text/css" rel="stylesheet" href="./resources/libs/bootstrap-star-rating/css/star-rating.min.css"/>
     <link type="text/css" rel="stylesheet" href="./resources/css/chat.css"/>
 </head>
@@ -24,7 +23,7 @@
     <script src="resources/libs/sockjs/sockjs.min.js" type="text/javascript"></script>
     <script src="resources/libs/stomp-websocket/lib/stomp.min.js" type="text/javascript"></script>
     <script src="resources/libs/angular/angular.min.js"></script>
-    <script src="resources/libs/lodash/lodash.min.js"></script>
+    <script src="resources/libs/lodash/dist/lodash.min.js"></script>
     <script src="resources/libs/bootstrap-star-rating/js/star-rating.min.js"></script>
     <script src="resources/script/angular/app.js" type="text/javascript"></script>
     <script src="resources/script/angular/chatController.js" type="text/javascript"></script>
