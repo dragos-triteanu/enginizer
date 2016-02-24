@@ -9,7 +9,7 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 
 @Configuration
 @EnableWebSocketMessageBroker
-@ComponentScan(basePackages = {"ro.management.platform.controller.chat.*"})
+@ComponentScan(basePackages = {"com.startup.enginizer.controller.chat.*"})
 public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 
     @Override

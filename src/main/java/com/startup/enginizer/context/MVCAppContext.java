@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableWebMvc
 @EnableScheduling
-@Import({MVCConfig.class, FreemarkerConfig.class,HibernateConfig.class, MailingConfig.class, AsyncConfig.class})
+@Import({MVCConfig.class, FreemarkerConfig.class,HibernateConfig.class, MailingConfig.class, AsyncConfig.class, DataRestConf.class})
 @ComponentScan("com.startup.enginizer.*")
 @PropertySource("classpath:conf/application.properties")
 @EnableAsync
