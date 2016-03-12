@@ -20,7 +20,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @Import(DatasourceConfig.class)
-@PropertySource("classpath:conf/hibernate.properties")
+@PropertySource({"classpath:conf/hibernate.properties","classpath:conf/application.properties"})
 public class HibernateConfig {
 
     @Autowired
@@ -40,9 +40,14 @@ public class HibernateConfig {
 
     private Properties hibernateProperties() {
         boolean shouldInsertDummyData = Boolean.parseBoolean(environment.getRequiredProperty("hibernate.dummyData"));
+        boolean inMemoryDb = Boolean.parseBoolean(environment.getRequiredProperty("app.datasource.inMemoryDb"));
 
         Properties properties = new Properties();
-        properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
+        if (inMemoryDb) {
+            properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+        } else {
+            properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
+        }
         properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
         properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
         properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));

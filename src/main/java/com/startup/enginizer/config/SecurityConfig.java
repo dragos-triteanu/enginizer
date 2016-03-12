@@ -15,18 +15,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Value("${crowdfunding.datasource.inMemoryDb}")
-	private boolean inMemoryDb;
-
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder authBuilder) throws Exception {
-			if(!inMemoryDb){
-				authBuilder.authenticationProvider(datasourceAuthenticationProvider());
-			}else{
-				authBuilder.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMINISTRATOR");
-				authBuilder.inMemoryAuthentication().withUser("consultant").password("consultant").roles("CONSULTANT");
-				authBuilder.inMemoryAuthentication().withUser("client").password("client").roles("CLIENT");
-			}
+		authBuilder.authenticationProvider(datasourceAuthenticationProvider());
 	}
 
 	@Override

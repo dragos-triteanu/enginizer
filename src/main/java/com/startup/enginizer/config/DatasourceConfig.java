@@ -1,9 +1,11 @@
 package com.startup.enginizer.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
@@ -17,21 +19,12 @@ import javax.sql.DataSource;
 import java.sql.Driver;
 
 @Configuration
-@PropertySource("classpath:conf/datasource.properties")
+@PropertySource({"classpath:conf/datasource.properties","classpath:conf/application.properties"})
 @EnableTransactionManagement
 public class DatasourceConfig {
-	
-	@Value("${crowdfunding.datasource.url}")
-	private String dbUrl;
-	
-	@Value("${crowdfunding.datasource.username}")
-	private String dbUsername;
-	
-	@Value("${crowdfunding.datasource.password}")
-	private String dbPassword;
-	
-	@Value("${crowdfunding.datasource.class}")
-	private String dbClassName;
+
+	@Autowired
+	private Environment environment;
 
 	@Bean(name="crowdfundingJdbcTemplate")
 	public JdbcTemplate crowdfundingJdbcTemplate(){
@@ -42,7 +35,13 @@ public class DatasourceConfig {
 
 	@Bean(name="dataSource")
 	public DataSource dataSource(){
-		DataSource dataSource = datasourceCreator();
+		boolean inMemoryDb = Boolean.parseBoolean(environment.getProperty("app.datasource.inMemoryDb"));
+		DataSource dataSource;
+		if(inMemoryDb){
+			dataSource = embeddedDataSource();
+		}else{
+			dataSource = datasourceCreator();
+		}
 		return dataSource;
 	}
 	
@@ -55,11 +54,11 @@ public class DatasourceConfig {
 	@SuppressWarnings("unchecked")
 	private SimpleDriverDataSource datasourceCreator(){
 		SimpleDriverDataSource simpleDriverDataSource = new SimpleDriverDataSource();
-		simpleDriverDataSource.setUrl(dbUrl);
-		simpleDriverDataSource.setUsername(dbUsername);
-		simpleDriverDataSource.setPassword(dbPassword);
+		simpleDriverDataSource.setUrl(environment.getProperty("crowdfunding.datasource.url"));
+		simpleDriverDataSource.setUsername(environment.getProperty("crowdfunding.datasource.username"));
+		simpleDriverDataSource.setPassword(environment.getProperty("crowdfunding.datasource.password"));
 		try{
-			simpleDriverDataSource.setDriverClass((Class<? extends Driver>) Class.forName(dbClassName));
+			simpleDriverDataSource.setDriverClass((Class<? extends Driver>) Class.forName(environment.getProperty("crowdfunding.datasource.class")));
 		}catch(Exception e){
 			
 		}
@@ -67,10 +66,9 @@ public class DatasourceConfig {
 	}
 
 	public DataSource embeddedDataSource() {
-		// no need shutdown, EmbeddedDatabaseFactoryBean will take care of this
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 		EmbeddedDatabase db = builder
-				.setType(EmbeddedDatabaseType.HSQL) //.H2
+				.setType(EmbeddedDatabaseType.H2) //.H2
 				.build();
 		return db;
 	}

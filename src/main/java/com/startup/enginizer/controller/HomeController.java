@@ -16,6 +16,7 @@ public class HomeController {
 	public String login(@RequestParam(value = "loginError" , required = false) boolean loginError,ModelMap modelMap){
 		if(loginError == true){
 			LOG.info("loginError="+loginError);
+
 			modelMap.addAttribute("loginError",loginError);
 		}
 		return "loginPage";

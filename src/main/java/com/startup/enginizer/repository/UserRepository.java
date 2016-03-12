@@ -27,8 +27,7 @@ public class UserRepository {
     private SessionFactory sessionFactory;
 
     public List<User> getAllAdmins(){
-        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class)
-                .add(Restrictions.eq("role", Authority.ADMINISTRATOR));
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class);
         List<User> list = criteria.list();
         return list;
     }
